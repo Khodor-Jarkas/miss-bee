@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ms. Bee | Everyday cleaning, made a little simpler</title>
+    <meta name="description" content="Explore Ms. Bee & Co. toilet, dish, glass, hand and floor cleaners, with practical advice for everyday cleaning.">
+    
+    <!-- Google Fonts: DM Sans, DM Serif Display & Cairo (for Arabic) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            50: '#fff7f7',
+                            100: '#fce9ec',
+                            200: '#f6cfd6',
+                            300: '#e9aab7',
+                            400: '#d78396',
+                            500: '#bf6178',
+                            600: '#a84961',
+                            700: '#87394f',
+                            800: '#6b3042',
+                            900: '#512634',
+                            950: '#30151f'
+                        },
+                        ariel: {
+                            green: '#a84961',
+                            darkGreen: '#512634',
+                            lightGreen: '#fff7f7',
+                            blue: '#0072ce',
+                            darkBlue: '#003666',
+                            lightBlue: '#eef6fc',
+                            honey: '#f59e0b',
+                            honeyDark: '#d97706',
+                            grayBg: '#fcf8f7'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', '"Cairo"', 'system-ui', '-apple-system', 'sans-serif'],
+                        display: ['"Outfit"', '"Cairo"', '"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-white text-slate-900 antialiased font-sans selection:bg-emerald-500 selection:text-white">
+
+    <!-- Announcement -->
+    <div class="bg-ariel-darkGreen text-white text-xs sm:text-sm font-semibold py-2.5 px-4 text-center border-b border-emerald-900">
+        <div class="max-w-7xl mx-auto flex items-center justify-center gap-2 flex-wrap">
+            <span aria-hidden="true" class="inline-block h-1.5 w-1.5 rounded-full bg-emerald-300"></span>
+            <span data-i18n="topBanner">Everyday cleaning, thoughtfully made.</span>
+            <a href="#products" data-i18n="topBannerLink" class="underline hover:text-emerald-300 ml-1 font-bold">Find your new routine &rarr;</a>
+        </div>
+    </div>
+
+    <!-- Sticky Main Navigation Header -->
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-12 h-12 rounded-full ariel-green-gradient flex items-center justify-center text-white shadow-md transform group-hover:scale-105 transition-transform">
+                        <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="m3.5 11 8.5-7 8.5 7M6 10v9h12v-9m-8.5 9v-5h5v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-black tracking-tight text-ariel-darkGreen block leading-none font-display">MS BEE &amp; CO</span>
+                        <span class="text-[10px] uppercase font-bold tracking-widest text-emerald-600 block mt-0.5">Home care, made simple</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Menu -->
+                <nav class="hidden lg:flex items-center space-x-7 text-sm font-bold text-slate-800">
+                    <a href="#products" data-i18n="navProducts" class="hover:text-ariel-green transition-colors py-2 border-b-2 border-transparent hover:border-ariel-green">All Products</a>
+                    <a href="#categories" data-i18n="navToilet" class="hover:text-ariel-green transition-colors py-2 border-b-2 border-transparent hover:border-ariel-green">Bathroom Care</a>
+                    <a href="#categories" data-i18n="navDishes" class="hover:text-ariel-green transition-colors py-2 border-b-2 border-transparent hover:border-ariel-green">Dishwashing</a>
+                    <a href="#categories" data-i18n="navHands" class="hover:text-ariel-green transition-colors py-2 border-b-2 border-transparent hover:border-ariel-green">Hand Care</a>
+                    <a href="#categories" data-i18n="navGlass" class="hover:text-ariel-green transition-colors py-2 border-b-2 border-transparent hover:border-ariel-green">Glass Care</a>
+                    <a href="#categories" data-i18n="navFloors" class="hover:text-ariel-green transition-colors py-2 border-b-2 border-transparent hover:border-ariel-green">Floor Care</a>
+                    <a href="#stain-guide" data-i18n="navStain" class="hover:text-ariel-green transition-colors py-2 border-b-2 border-transparent hover:border-ariel-green">Guide</a>
+                </nav>
+
+                <!-- Actions -->
+                <div class="hidden sm:flex items-center gap-3">
+
+                    <a href="https://www.instagram.com/ms.bee.detergents/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram" class="text-slate-600 hover:text-ariel-green transition-colors">
+                        <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                            <rect x="3" y="3" width="18" height="18" rx="5"/>
+                            <circle cx="12" cy="12" r="4"/>
+                            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61582143633051" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook" class="text-slate-600 hover:text-ariel-green transition-colors">
+                        <svg aria-hidden="true" class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M13.4 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.1H7.2V13H10v8h3.4Z"/>
+                        </svg>
+                    </a>
+                    
+                    <!-- Arabic / English Language Switcher -->
+                    <div class="relative" id="lang-menu">
+                        <button id="lang-toggle-btn" type="button" class="flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-slate-200 text-xs font-bold text-slate-700 hover:border-emerald-500 bg-white shadow-sm transition-all">
+                            <span class="text-sm">🌐</span>
+                            <span id="current-lang-label">English</span>
+                            <svg class="w-3.5 h-3.5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        
+                        <!-- Dropdown Options -->
+                        <div id="lang-dropdown" class="hidden absolute right-0 rtl:right-auto rtl:left-0 mt-2 w-36 bg-white rounded-2xl shadow-xl border border-slate-100 py-1.5 z-50">
+                            <button type="button" data-lang="en" class="w-full text-left rtl:text-right px-4 py-2 text-xs font-bold text-slate-800 hover:bg-emerald-50 hover:text-emerald-700 flex items-center justify-between">
+                                <span>English</span>
+                                <span id="en-check" class="text-emerald-600 font-black">✓</span>
+                            </button>
+                            <button type="button" data-lang="ar" class="w-full text-left rtl:text-right px-4 py-2 text-xs font-bold text-slate-800 hover:bg-emerald-50 hover:text-emerald-700 flex items-center justify-between">
+                                <span class="font-bold">العربية</span>
+                                <span id="ar-check" class="text-emerald-600 font-black hidden">✓</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <a href="#products" data-i18n="whereToBuy" class="btn-ariel-primary text-sm shadow-md py-2.5 px-5">
+                        Browse Products
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center gap-2">
+                    <button type="button" data-lang="ar" class="text-xs font-bold px-2.5 py-1.5 rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50">
+                        العربية
+                    </button>
+                    <button id="mobile-menu-btn" type="button" class="text-slate-700 hover:text-ariel-green focus:outline-none p-2" aria-label="Toggle navigation">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-6 py-6 shadow-xl space-y-4">
+            <a href="#products" data-i18n="navProducts" class="block text-base font-bold text-slate-800 hover:text-ariel-green">All Products</a>
+            <a href="#categories" data-i18n="navToilet" class="block text-base font-bold text-slate-800 hover:text-ariel-green">Bathroom Care</a>
+            <a href="#categories" data-i18n="navDishes" class="block text-base font-bold text-slate-800 hover:text-ariel-green">Dishwashing Liquid</a>
+            <a href="#categories" data-i18n="navHands" class="block text-base font-bold text-slate-800 hover:text-ariel-green">Handwashing Liquid</a>
+            <a href="#categories" data-i18n="navGlass" class="block text-base font-bold text-slate-800 hover:text-ariel-green">Glass Cleaner</a>
+            <a href="#categories" data-i18n="navFloors" class="block text-base font-bold text-slate-800 hover:text-ariel-green">Floor Cleaner</a>
+            <a href="#categories" data-i18n="navDisinfectant" class="block text-base font-bold text-slate-800 hover:text-ariel-green">Antiseptic Disinfectant</a>
+            <div class="pt-4 border-t border-slate-100 flex items-center justify-between gap-4">
+                <a href="#products" data-i18n="whereToBuy" class="btn-ariel-primary w-full text-center">Browse Products</a>
+            </div>
+            <div class="pt-2 flex items-center gap-6">
+                <a href="https://www.instagram.com/ms.bee.detergents/" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-slate-700 hover:text-ariel-green">Instagram</a>
+                <a href="https://www.facebook.com/profile.php?id=61582143633051" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-slate-700 hover:text-ariel-green">Facebook</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="relative overflow-hidden bg-ariel-grayBg py-12 sm:py-16 lg:py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                <div class="space-y-6 text-left rtl:text-right">
+                    <p data-i18n="heroBadge" class="text-sm font-semibold text-ariel-green">The new online home of Ms. Bee &amp; Co.</p>
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl text-slate-950 leading-[1.04]">
+                        <span data-i18n="heroTitleLine1">A little more care</span><br>
+                        <span class="text-ariel-green" data-i18n="heroTitleLine2">in every clean.</span>
+                    </h1>
+                    <p data-i18n="heroDesc" class="text-base sm:text-lg text-slate-600 max-w-lg leading-relaxed">
+                        Ms. Bee is growing beyond social media. Explore the home-care range, find practical cleaning guidance, and follow the journey here.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-3 pt-1">
+                        <a href="#products" data-i18n="heroBtn1" class="btn-ariel-primary px-7 py-3 text-center">Explore the range</a>
+                        <a href="#stain-guide" data-i18n="heroBtn2" class="btn-ariel-outline px-7 py-3 text-center">Get stain advice</a>
+                    </div>
+                    <p class="pt-4 text-xs font-medium tracking-wide text-slate-500">BATHROOM <span class="mx-2 text-emerald-700">/</span> KITCHEN <span class="mx-2 text-emerald-700">/</span> HOME</p>
+                </div>
+                <div class="relative">
+                    <img
+                        src="assets/images/ms-bee-product-range.jpg"
+                        alt="The Ms. Bee & Co. household cleaning range, including toilet cleaner, dishwashing liquid, glass cleaner, hand soap and floor cleaner"
+                        class="hero-product-photo h-[360px] sm:h-[440px] lg:h-[500px] w-full rounded-xl object-cover"
+                        fetchpriority="high">
+                    <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto rounded-lg bg-white/95 px-5 py-4 shadow-sm backdrop-blur-sm">
+                        <p class="text-xs uppercase tracking-widest text-slate-500">MS BEE &amp; CO</p>
+                        <p class="mt-1 font-display text-xl text-slate-900">A cleaner home. A healthier family.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4 Department Quick Navigator Cards -->
+    <section id="categories" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span data-i18n="catSubtitle" class="text-xs uppercase font-extrabold text-emerald-700 tracking-widest">Department Directory</span>
+                <h2 data-i18n="catTitle" class="text-3xl sm:text-4xl font-black text-slate-950 mt-1 font-display">
+                    Explore Ms. Bee Cleaning Supplies
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Dept 1: Bathroom -->
+                <div class="ariel-card p-6 border border-slate-100 flex flex-col justify-between group hover:border-emerald-300">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-sm font-semibold mb-4">
+                            01
+                        </div>
+                        <h3 class="text-xl font-black text-slate-950 mb-1 font-display">Bathroom Care</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">Toilet cleaner and antiseptic disinfectant for household cleaning.</p>
+                    </div>
+                    <a href="#products" class="text-xs font-extrabold text-emerald-700 hover:text-emerald-800 flex items-center gap-1">
+                        Explore bathroom care &rarr;
+                    </a>
+                </div>
+
+                <!-- Dept 2: Dishwashing -->
+                <div class="ariel-card p-6 border border-slate-100 flex flex-col justify-between group hover:border-amber-300">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center text-sm font-semibold mb-4">
+                            02
+                        </div>
+                        <h3 class="text-xl font-black text-slate-950 mb-1 font-display">Dishwashing Liquids</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">Lemon dishwashing liquid for plates, cookware and the everyday washing-up.</p>
+                    </div>
+                    <a href="#products" class="text-xs font-extrabold text-amber-700 hover:text-amber-800 flex items-center gap-1">
+                        View Dishwashing &rarr;
+                    </a>
+                </div>
+
+                <!-- Dept 3: Handwashing -->
+                <div class="ariel-card p-6 border border-slate-100 flex flex-col justify-between group hover:border-blue-300">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-sm font-semibold mb-4">
+                            03
+                        </div>
+                        <h3 class="text-xl font-black text-slate-950 mb-1 font-display">Hand Soap</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">Liquid hand soap in a pomegranate fragrance for everyday use.</p>
+                    </div>
+                    <a href="#products" class="text-xs font-extrabold text-blue-700 hover:text-blue-800 flex items-center gap-1">
+                        View Hand Washes &rarr;
+                    </a>
+                </div>
+
+                <!-- Dept 4: Floor & Disinfectants -->
+                <div class="ariel-card p-6 border border-slate-100 flex flex-col justify-between group hover:border-teal-300">
+                    <div>
+                        <div class="w-12 h-12 rounded-full bg-teal-100 text-teal-700 flex items-center justify-center text-sm font-semibold mb-4">
+                            04
+                        </div>
+                        <h3 class="text-xl font-black text-slate-950 mb-1 font-display">Glass & Floor Care</h3>
+                        <p class="text-slate-600 text-xs leading-relaxed mb-4">Glass cleaner and floor cleaner for two of the most-used surfaces at home.</p>
+                    </div>
+                    <a href="#products" class="text-xs font-extrabold text-teal-700 hover:text-teal-800 flex items-center gap-1">
+                        View Disinfectants &rarr;
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Product range -->
+    <section id="products" class="py-16 bg-ariel-grayBg border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span data-i18n="rangeSubtitle" class="text-xs uppercase font-extrabold text-emerald-700 tracking-widest">Product Catalog</span>
+                    <h2 data-i18n="rangeTitle" class="text-3xl sm:text-4xl font-black text-slate-950 mt-1 font-display">Featured Cleaning & Disinfection Supplies</h2>
+                </div>
+
+                <!-- Multi-Department Filter Buttons -->
+                <div class="flex flex-wrap gap-2 mt-4 md:mt-0">
+                    <button data-filter="all" data-i18n="filterAll" class="px-4 py-2 rounded-full text-xs font-bold transition-all bg-emerald-600 text-white shadow-md">All Supplies</button>
+                    <button data-filter="toilet" data-i18n="filterToilet" class="px-4 py-2 rounded-full text-xs font-bold transition-all bg-white text-slate-700 border border-slate-200 hover:border-emerald-500">Toilet Cleaner</button>
+                    <button data-filter="dish" data-i18n="filterDish" class="px-4 py-2 rounded-full text-xs font-bold transition-all bg-white text-slate-700 border border-slate-200 hover:border-emerald-500">Dishwashing</button>
+                    <button data-filter="hand" data-i18n="filterHand" class="px-4 py-2 rounded-full text-xs font-bold transition-all bg-white text-slate-700 border border-slate-200 hover:border-emerald-500">Hand Wash</button>
+                    <button data-filter="glass" data-i18n="filterGlass" class="px-4 py-2 rounded-full text-xs font-bold transition-all bg-white text-slate-700 border border-slate-200 hover:border-emerald-500">Glass Cleaner</button>
+                    <button data-filter="floor" data-i18n="filterFloor" class="px-4 py-2 rounded-full text-xs font-bold transition-all bg-white text-slate-700 border border-slate-200 hover:border-emerald-500">Floor Cleaner</button>
+                    <button data-filter="disinfect" data-i18n="filterDisinfect" class="px-4 py-2 rounded-full text-xs font-bold transition-all bg-white text-slate-700 border border-slate-200 hover:border-emerald-500">Antiseptic</button>
+                </div>
+            </div>
+
+            <!-- Product Cards Grid: 6 Distinct Products Covering Every Request -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Product 1: Toilet Cleaner -->
+                <div data-category="toilet" class="ariel-card border border-slate-100 flex flex-col justify-between overflow-hidden group">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-emerald-600 text-white text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
+                                Bathroom care
+                            </span>
+                        </div>
+
+                        <div class="h-52 bg-gradient-to-b from-slate-50 to-emerald-50/60 rounded-2xl flex items-center justify-center p-6 border border-emerald-100/40 relative overflow-hidden">
+                            <img src="assets/images/toilet-cleaner-instagram.jpg" alt="Ms. Bee toilet cleaner bottle" class="product-range-crop" loading="lazy">
+                        </div>
+
+                        <div class="mt-6 text-left rtl:text-right">
+                            <h3 class="text-xl font-black text-slate-950 mb-1 font-display">Toilet Cleaner</h3>
+                            <p class="text-xs text-emerald-700 font-bold mb-3 uppercase tracking-wider">Bathroom care</p>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">A dedicated cleaner for toilet bowls. Use according to the directions on the bottle.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between">
+                        <a href="#social" data-i18n="productContact" class="btn-ariel-primary w-full text-xs py-2.5 px-6">Ask about availability</a>
+                    </div>
+                </div>
+
+                <!-- Product 2: Dishwashing Liquid -->
+                <div data-category="dish" class="ariel-card border border-slate-100 flex flex-col justify-between overflow-hidden group">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-amber-500 text-white text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
+                                Dish care
+                            </span>
+                        </div>
+
+                        <div class="h-52 bg-gradient-to-b from-slate-50 to-amber-50/60 rounded-2xl flex items-center justify-center p-6 border border-amber-100/40 relative overflow-hidden">
+                            <img src="assets/images/ms-bee-product-range.jpg" alt="" class="product-range-crop" loading="lazy" aria-hidden="true">
+                        </div>
+
+                        <div class="mt-6 text-left rtl:text-right">
+                            <h3 class="text-xl font-black text-slate-950 mb-1 font-display">Lemon Dishwashing Liquid</h3>
+                            <p class="text-xs text-amber-600 font-bold mb-3 uppercase tracking-wider">750 ml &bull; Lemon</p>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">Lemon dishwashing liquid for everyday washing-up, with 3× grease-removal power as stated on the pack.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between">
+                        <a href="#social" data-i18n="productContact" class="btn-ariel-primary w-full text-xs py-2.5 px-6">Ask about availability</a>
+                    </div>
+                </div>
+
+                <!-- Product 3: Handwashing Liquid -->
+                <div data-category="hand" class="ariel-card border border-slate-100 flex flex-col justify-between overflow-hidden group">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-blue-600 text-white text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
+                                Hand care
+                            </span>
+                        </div>
+
+                        <div class="h-52 bg-gradient-to-b from-slate-50 to-blue-50/60 rounded-2xl flex items-center justify-center p-6 border border-blue-100/40 relative overflow-hidden">
+                            <img src="assets/images/hand-soap-instagram.jpg" alt="Ms. Bee pomegranate liquid hand soap" class="product-range-crop" loading="lazy">
+                        </div>
+
+                        <div class="mt-6 text-left rtl:text-right">
+                            <h3 class="text-xl font-black text-slate-950 mb-1 font-display">Pomegranate Liquid Hand Soap</h3>
+                            <p class="text-xs text-blue-600 font-bold mb-3 uppercase tracking-wider">530 ml &bull; Pomegranate</p>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">A liquid hand wash for everyday use at the kitchen or bathroom sink.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between">
+                        <a href="#social" data-i18n="productContact" class="btn-ariel-primary w-full text-xs py-2.5 px-6">Ask about availability</a>
+                    </div>
+                </div>
+
+                <!-- Product 4: Floor Cleaner -->
+                <div data-category="floor" class="ariel-card border border-slate-100 flex flex-col justify-between overflow-hidden group">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-teal-600 text-white text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
+                                Floor care
+                            </span>
+                        </div>
+
+                        <div class="h-52 bg-gradient-to-b from-slate-50 to-teal-50/60 rounded-2xl flex items-center justify-center p-6 border border-teal-100/40 relative overflow-hidden">
+                            <img src="assets/images/floor-cleaner-instagram.jpg" alt="Ms. Bee floor cleaner bottle" class="product-range-crop" loading="lazy">
+                        </div>
+
+                        <div class="mt-6 text-left rtl:text-right">
+                            <h3 class="text-xl font-black text-slate-950 mb-1 font-display">Floor Cleaner</h3>
+                            <p class="text-xs text-teal-600 font-bold mb-3 uppercase tracking-wider">750 ml &bull; Long-lasting freshness</p>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">A floor cleaner for routine care. Check the label to confirm it is suitable for your surface.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between">
+                        <a href="#social" data-i18n="productContact" class="btn-ariel-primary w-full text-xs py-2.5 px-6">Ask about availability</a>
+                    </div>
+                </div>
+
+                <!-- Product 5: Antiseptic Disinfectant -->
+                <div data-category="disinfect" class="ariel-card border border-slate-100 flex flex-col justify-between overflow-hidden group">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-rose-600 text-white text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
+                                Surface care
+                            </span>
+                        </div>
+
+                        <div class="h-52 bg-gradient-to-b from-slate-50 to-rose-50/60 rounded-2xl flex items-center justify-center p-6 border border-rose-100/40 relative overflow-hidden">
+                            <img src="assets/images/antiseptic-cleaner-instagram.jpg" alt="Ms. Bee antiseptic disinfectant bottle" class="product-range-crop" loading="lazy">
+                        </div>
+
+                        <div class="mt-6 text-left rtl:text-right">
+                            <h3 class="text-xl font-black text-slate-950 mb-1 font-display">Antiseptic Disinfectant</h3>
+                            <p class="text-xs text-rose-600 font-bold mb-3 uppercase tracking-wider">Household use</p>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">For household cleaning. Follow the product label for directions, dilution and suitable surfaces.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between">
+                        <a href="#social" data-i18n="productContact" class="btn-ariel-primary w-full text-xs py-2.5 px-6">Ask about availability</a>
+                    </div>
+                </div>
+
+                <!-- Product 6: Glass Cleaner -->
+                <div data-category="glass" class="ariel-card border border-slate-100 flex flex-col justify-between overflow-hidden group">
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-indigo-600 text-white text-[11px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
+                                Glass care
+                            </span>
+                        </div>
+
+                        <div class="h-52 bg-gradient-to-b from-slate-50 to-indigo-50/60 rounded-2xl flex items-center justify-center p-6 border border-indigo-100/40 relative overflow-hidden">
+                            <img src="assets/images/ms-bee-product-range.jpg" alt="" class="product-range-crop" loading="lazy" aria-hidden="true">
+                        </div>
+
+                        <div class="mt-6 text-left rtl:text-right">
+                            <h3 class="text-xl font-black text-slate-950 mb-1 font-display">Glass Cleaner</h3>
+                            <p class="text-xs text-indigo-600 font-bold mb-3 uppercase tracking-wider">Spray bottle &bull; 3× cleaner power</p>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">A spray cleaner for glass and windows. Use as directed on the product label.</p>
+                        </div>
+                    </div>
+
+                    <div class="p-6 pt-0 border-t border-slate-100 flex items-center justify-between">
+                        <a href="#social" data-i18n="productContact" class="btn-ariel-primary w-full text-xs py-2.5 px-6">Ask about availability</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Cleaning guide -->
+    <section id="stain-guide" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span data-i18n="stainSubtitle" class="text-xs uppercase font-extrabold text-ariel-green tracking-widest">Interactive Cleaning Intelligence</span>
+                <h2 data-i18n="stainTitle" class="text-3xl sm:text-4xl font-black text-slate-950 mt-1 font-display">The Ms. Bee Cleaning & Stain Guide</h2>
+                <p data-i18n="stainDesc" class="text-slate-600 mt-2 font-medium">Have a stubborn stain or sanitation question? Choose your challenge for an expert protocol.</p>
+            </div>
+
+            <div class="bg-ariel-grayBg rounded-3xl shadow-xl p-6 sm:p-10 border border-slate-200/80 max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                    <div>
+                        <label for="stain-selector" data-i18n="stainLabel1" class="block text-xs font-black uppercase text-slate-700 tracking-wider mb-2">1. Cleaning challenge:</label>
+                        <select id="stain-selector" class="w-full bg-white border-2 border-emerald-600 text-slate-900 font-bold rounded-2xl py-3.5 px-4 focus:ring-2 focus:ring-emerald-500 focus:outline-none transition-all cursor-pointer">
+                            <option value="toilet" selected>Toilet bowl</option>
+                            <option value="grease_dish">Dishes and cookware</option>
+                            <option value="glass_clean">Glass and windows</option>
+                            <option value="floor_grime">Floors</option>
+                            <option value="germ_disinfect">Surface disinfection</option>
+                            <option value="hand_hygiene">Hands</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <!-- Interactive Results Container -->
+                <div id="stain-result-card" class="transition-all duration-300">
+                    <!-- Injected dynamically by main.js -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand story -->
+    <section id="about" class="py-16 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="rounded-xl text-white p-8 sm:p-14 shadow-none relative overflow-hidden bg-ariel-banner-gradient">
+                
+                <div class="absolute -right-16 -top-16 w-80 h-80 rounded-full bg-white/10 blur-2xl pointer-events-none"></div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                    <div class="lg:col-span-8 space-y-4 text-left rtl:text-right">
+                        <span data-i18n="brandTag" class="inline-block text-emerald-100 font-semibold text-xs uppercase tracking-wider">
+                            Growing beyond social
+                        </span>
+                        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-tight font-display text-white">
+                            <span data-i18n="brandTitle1">A NEW HOME</span><br>
+                            <span class="text-amber-200" data-i18n="brandTitle2">FOR MS. BEE.</span>
+                        </h2>
+                        <p data-i18n="brandDesc" class="text-emerald-50 text-base sm:text-lg max-w-xl font-medium leading-relaxed">
+                            What began on social media is becoming a dedicated place to discover the range, get practical cleaning tips, and stay connected with Ms. Bee &amp; Co.
+                        </p>
+                        <div class="pt-2 flex flex-wrap gap-3">
+                            <a href="https://www.instagram.com/ms.bee.detergents/" target="_blank" rel="noopener noreferrer" data-i18n="instagramLink" class="bg-white hover:bg-emerald-50 text-ariel-darkGreen font-semibold px-6 py-3 rounded-md transition-colors">
+                                Follow on Instagram
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=61582143633051" target="_blank" rel="noopener noreferrer" data-i18n="facebookLink" class="border border-white/60 hover:bg-white/10 text-white font-semibold px-6 py-3 rounded-md transition-colors">
+                                Visit Facebook
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-4 flex justify-center">
+                        <div class="border border-white/20 p-8 rounded-lg text-center max-w-xs text-white">
+                            <h4 data-i18n="brandBoxTitle" class="font-semibold text-xl mb-2 text-white font-display">A brand in the making</h4>
+                            <p data-i18n="brandBoxDesc" class="text-sm text-emerald-100">Thanks for being part of Ms. Bee’s next chapter.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stay connected -->
+    <section id="social" class="py-14 bg-ariel-grayBg border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+            <div>
+                <span data-i18n="socialSubtitle" class="text-xs uppercase font-semibold text-emerald-700 tracking-widest">Stay connected</span>
+                <h2 data-i18n="socialTitle" class="text-3xl text-slate-950 mt-2 font-display">Follow Ms. Bee’s next chapter</h2>
+                <p data-i18n="socialDesc" class="text-slate-600 text-sm mt-2">Find new products, updates and behind-the-scenes moments on our social channels.</p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3">
+                <a href="https://www.instagram.com/ms.bee.detergents/" target="_blank" rel="noopener noreferrer" data-i18n="instagramLink" class="btn-ariel-primary px-6 py-3 text-center">Follow on Instagram</a>
+                <a href="https://www.facebook.com/profile.php?id=61582143633051" target="_blank" rel="noopener noreferrer" data-i18n="facebookLink" class="btn-ariel-outline px-6 py-3 text-center">Visit Facebook</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comprehensive Corporate & Brand Footer (RICH PINE GREEN THEME) -->
+    <footer class="text-white pt-14 pb-10 ariel-footer-gradient">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-emerald-900/60 text-left rtl:text-right">
+                
+                <!-- Col 1: Brand Info -->
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-full ariel-green-gradient flex items-center justify-center text-white">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="m3.5 11 8.5-7 8.5 7M6 10v9h12v-9m-8.5 9v-5h5v5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <span class="text-xl font-black tracking-tight font-display text-white">MS BEE &amp; CO</span>
+                    </div>
+                    <p class="text-emerald-100/70 text-xs leading-relaxed max-w-sm font-medium">
+                        Everyday cleaning products for the rooms and routines that make a home.
+                    </p>
+                    <div class="flex flex-wrap gap-x-5 gap-y-2">
+                        <a href="https://www.instagram.com/ms.bee.detergents/" target="_blank" rel="noopener noreferrer" class="text-emerald-200/80 text-xs hover:text-white">Instagram</a>
+                        <a href="https://www.facebook.com/profile.php?id=61582143633051" target="_blank" rel="noopener noreferrer" class="text-emerald-200/80 text-xs hover:text-white">Facebook</a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Products -->
+                <div>
+                    <h4 class="text-sm font-black uppercase text-emerald-300 tracking-wider mb-4 font-display">Product Lines</h4>
+                    <ul class="space-y-2 text-xs text-emerald-100/80 font-medium">
+                        <li><a href="#products" class="hover:text-white transition-colors">Toilet Cleaner</a></li>
+                        <li><a href="#products" class="hover:text-white transition-colors">Dishwashing Liquids</a></li>
+                        <li><a href="#products" class="hover:text-white transition-colors">Liquid Hand Soap</a></li>
+                        <li><a href="#products" class="hover:text-white transition-colors">Glass Cleaner</a></li>
+                        <li><a href="#products" class="hover:text-white transition-colors">Floor Cleaner</a></li>
+                        <li><a href="#products" class="hover:text-white transition-colors">Antiseptic Disinfectant</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Practical Guides -->
+                <div>
+                    <h4 class="text-sm font-black uppercase text-emerald-300 tracking-wider mb-4 font-display">Cleaning Guides</h4>
+                    <ul class="space-y-2 text-xs text-emerald-100/80 font-medium">
+                        <li><a href="#stain-guide" class="hover:text-white transition-colors">Toilet bowl care</a></li>
+                        <li><a href="#stain-guide" class="hover:text-white transition-colors">Washing-up</a></li>
+                        <li><a href="#stain-guide" class="hover:text-white transition-colors">Glass and windows</a></li>
+                        <li><a href="#stain-guide" class="hover:text-white transition-colors">Floor cleaning</a></li>
+                        <li><a href="#stain-guide" class="hover:text-white transition-colors">Surface disinfection</a></li>
+                        <li><a href="#stain-guide" class="hover:text-white transition-colors">Hand washing</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Legal Bar -->
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-emerald-200/50 space-y-4 md:space-y-0">
+                <p>&copy; 2026 Ms. Bee &amp; Co.</p>
+                <p class="text-center md:text-right">🇱🇧 Proudly made by Chemical Engineers</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Logic Script -->
+    <script src="js/main.js"></script>
+    <!-- Obfuscated Security Script -->
+    <script src="js/security.js"></script>
+</body>
+</html>
